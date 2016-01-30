@@ -1,0 +1,26 @@
+{
+  "name": "rrvApp",
+  "homepage": "https://github.com/raghuvarma/Rails_Angular_posts_app",
+  "authors": [
+    "Raghu Varma R <rrv461@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-ui-router": "~0.2.17",
+    "bootstrap": "~3.3.6"
+  }
+}
