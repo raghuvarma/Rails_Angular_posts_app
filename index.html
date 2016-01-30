@@ -4,13 +4,26 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="app.js"></script>
   </head>
-  <body ng-app="rrvApp" ng-controller="MainCtrl">
+  <body data-ng-app="rrvApp" data-ng-controller="MainCtrl">
     <h3 data-ng-bind="appHeading"></h3>
-    <div ng-repeat="post in posts">
-      <span data-ng-bind="post.title"></span>
-      <span>-</span>
-      <span>upvotes: </span>
-      <span data-ng-bind="post.upvotes"></span>
-    </div>
+    <form data-ng-submit="addPost()">
+      <input type="text" data-ng-model="title"></input>
+      <br/>
+      <input type="text" placeholder="Link" data-ng-model="link"></input>
+      <br/>
+      <button type="submit">Save Post</button>
+    </form>
+
+    <div>
+      <div> Previous posts </div>
+      <div data-ng-repeat="post in posts | orderBy: '-upvotes'">
+        <span data-ng-click="incrementUpvotes(post)">^</span>
+        <span data-ng-show="post.link" data-ng-bind="post.title" href="{{post.link}}"></span>        
+        <span data-ng-hide="post.link" data-ng-bind="post.title"></span>
+        <span>-</span>
+        <span>upvotes: </span>
+        <span data-ng-bind="post.upvotes"></span>
+      </div>
+    </div>    
   </body>
 </html>
