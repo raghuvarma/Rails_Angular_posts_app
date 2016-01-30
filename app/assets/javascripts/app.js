@@ -1,21 +1,21 @@
 angular.module('rrvApp', ['ui.router', 'templates'])
 .config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
-
+		$urlRouterProvider.otherwise('home');
 		$stateProvider
 		.state('home', {
 			url: '/home',
-			templateUrl: 'home/_home.html.erb',
+			templateUrl: 'home/_home.html',
 			controller: 'MainCtrl'
 		})
 		.state('posts', {
 			url: '/posts/{id}',
-			templateUrl: 'posts/posts.html.erb',
+			templateUrl: 'posts/_posts.html',
 			controller: 'PostsCtrl'
 		});
 	}
 ])
-  $urlRouterProvider.otherwise('home');
+  
 // .factory('posts', [ function(){
 //   var o = {
 //     posts: []
